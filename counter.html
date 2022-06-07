@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+<body>
+    <h1></h1>
+    <button>Increment</button>
+    <button>Decrement</button>
+</body>
+</html>
+
+<script>
+    // let counter = 0;
+    // document.querySelector("h1+button").addEventListener("click", incFun)
+
+    // document.querySelector("button+button").addEventListener("click", decFun)
+
+    // function incFun(){
+    //     counter++;
+    //     document.querySelector("h1").innerText=counter
+    // }
+
+    // function decFun(){
+    //     counter--;
+    //     document.querySelector("h1").innerText=counter
+    // }
+
+
+    //or
+     let counter=localStorage.getItem("localCounter")||0;
+   // let counter = localStorage.getItem("localCounter");// getting the previous value from local storage
+    //initially it is null//if localCounter is not present in local storage this is act as a bug
+
+    // if(localStorage.getItem("localCounter")==null){
+    //     counter=0;
+    // }else{
+    //    counter= localStorage.getItem("localCounter")
+    // }
+
+   // console.log(localStorage.getItem("localCounter")||0)
+
+    document.querySelector("h1").innerText=counter;
+    document.querySelector("h1+button").addEventListener("click", incFun)
+
+    function incFun(){
+        counter++;
+        document.querySelector("h1").innerText=counter;// here give the value of counter to h1
+        
+
+        localStorage.setItem("localCounter", counter);
+    }
+
+    document.querySelector("button+button").addEventListener("click", decFun)
+
+    function decFun(){
+        counter--;  
+        document.querySelector("h1").innerText=counter;// here give the value of counter to h1
+
+        localStorage.setItem("localCounter", counter);
+    }
+
+    // console.log(true||true)//true
+    // console.log(false||false)//false
+    // console.log(true||false)//true
+    // console.log(false||true)//true
+
+    //or cond, even if one condn is true is true output is true.
+
+    // if first condn is true, it will ignore second condn
+    // if first condn is false, it will check second condn
+
+
+    //if first condn is false, it will print second condn
+    // console.log(null||true)// true, null is false so second cond
+    // console.log(true||null)// true
+
+    // console.log(0||1)//1
+    // console.log(0||100)//100
+    // console.log(1||sonia)//1
+    // console.log(0||sonia)//sonia
+
+    // console.log(null||0)// 0
+    // console.log(null||true)// true
+
+    // console.log(localStorage.getItem("hfdctvdbrt")||0)//0
+
+
+
+    //console.log(localStorage.getItem("localCounter")||0)
+
+    // console.log(3||0)//0
+
+</script>
